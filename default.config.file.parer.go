@@ -8,6 +8,7 @@ import (
 	"strings"
 
 	"github.com/BurntSushi/toml"
+	goenvloader "github.com/MartinSimango/go-envloader"
 	"gopkg.in/yaml.v2"
 )
 
@@ -18,11 +19,35 @@ type DefaultConfigFileParser struct {
 // Check we implement interface
 var _ ConfigFileParser = &DefaultConfigFileParser{}
 
-// NewDefaulltConfigFileParser is a constructor
-func NewDefaulltConfigFileParser(fileConfiguration *FileConfiguration) *DefaultConfigFileParser {
+// DefaulltConfigFileParser is a constructor
+func NewDefaultConfigFileParser(fileConfiguration *FileConfiguration) *DefaultConfigFileParser {
 	return &DefaultConfigFileParser{
 		FileConfiguration: fileConfiguration,
 	}
+}
+
+func DefaultYamlConfigFileParser(configFile string, config interface{}) *DefaultConfigFileParser {
+	fileConfig := FileConfiguration{
+		FileName:               configFile,
+		FileFormat:             YAML,
+		FileInputConfiguration: config,
+		EnvironmentLoader:      goenvloader.NewBraceEnvironmentLoader(),
+	}
+	return NewDefaultConfigFileParser(
+		&fileConfig,
+	)
+}
+
+func DefaultPropertyConfigFileParser(configFile string, config interface{}) *DefaultConfigFileParser {
+	fileConfig := FileConfiguration{
+		FileName:               configFile,
+		FileFormat:             PROPERTY,
+		FileInputConfiguration: config,
+		EnvironmentLoader:      goenvloader.NewBraceEnvironmentLoader(),
+	}
+	return NewDefaultConfigFileParser(
+		&fileConfig,
+	)
 }
 
 // ParseConfig parses the file configured the FileConfiguration struct variable's FileName parameter.
