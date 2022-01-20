@@ -123,7 +123,7 @@ func (cf *StrictConfigFileParser) setOutputConfigValue(inputConfig, outputConfig
 		value, err := cf.FileConfiguration.EnvironmentLoader.LoadStringFromEnv(inputConfig.Field(index).String())
 		if err != nil {
 			return &FieldError{
-				FieldName:    inputConfig.Type().Field(index).Name + ": " + inputConfig.Field(index).String(),
+				Field:        inputConfig.Type().Field(index).Name + ": " + inputConfig.Field(index).String(),
 				ErrorMessage: cf.getErrorMessage(err, inputConfig.Field(index)),
 			}
 		}
@@ -132,7 +132,7 @@ func (cf *StrictConfigFileParser) setOutputConfigValue(inputConfig, outputConfig
 		value, err := cf.FileConfiguration.EnvironmentLoader.LoadIntFromEnv(inputConfig.Field(index).String())
 		if err != nil {
 			return &FieldError{
-				FieldName:    inputConfig.Type().Field(index).Name + ": " + inputConfig.Field(index).String(),
+				Field:        inputConfig.Type().Field(index).Name + ": " + inputConfig.Field(index).String(),
 				ErrorMessage: cf.getErrorMessage(err, inputConfig.Field(index)),
 			}
 		}

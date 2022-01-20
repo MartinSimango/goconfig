@@ -96,7 +96,7 @@ func (cf *DefaultConfigFileParser) extractEnv(configuration interface{}) []Field
 			value, err := cf.FileConfiguration.EnvironmentLoader.LoadStringFromEnv(field.String())
 			if err != nil {
 				fieldErrors = AppendFieldError(fieldErrors, &FieldError{
-					FieldName:    inputConfig.Type().Field(i).Name + ": " + field.String(),
+					Field:        inputConfig.Type().Field(i).Name + ": " + field.String(),
 					ErrorMessage: cf.getErrorMessage(err, field),
 				})
 			}

@@ -10,7 +10,7 @@ type Error interface {
 }
 
 type FieldError struct {
-	FieldName    string
+	Field        string
 	ErrorMessage string
 }
 
@@ -18,7 +18,7 @@ type FieldError struct {
 var _ Error = &FieldError{}
 
 func (cfe *FieldError) Error() string {
-	return fmt.Sprintf("error found with field '%s': %s", cfe.FieldName, cfe.ErrorMessage)
+	return fmt.Sprintf("error found with field '%s': %s", cfe.Field, cfe.ErrorMessage)
 }
 
 //FieldErrorsToString coverts an array of field arrays into a string
@@ -26,18 +26,18 @@ func FieldErrorsToString(fieldErrors []FieldError) string {
 	var combinedFieldErrors []string
 	for _, fieldError := range fieldErrors {
 		combinedFieldErrors = append(combinedFieldErrors, fmt.Sprintf("%s - '%s'",
-			fieldError.FieldName, fieldError.ErrorMessage))
+			fieldError.Field, fieldError.ErrorMessage))
 	}
 	return strings.Join(combinedFieldErrors, "\n")
 }
 
-// ToFieldError converts err into a field error with the field name of fieldName
-func ToFieldError(fieldName string, err error) *FieldError {
+// ToFieldError converts err into a field error
+func ToFieldError(field string, err error) *FieldError {
 	if err == nil {
 		return nil
 	}
 	return &FieldError{
-		FieldName:    fieldName,
+		Field:        field,
 		ErrorMessage: err.Error(),
 	}
 }
