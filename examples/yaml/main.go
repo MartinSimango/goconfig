@@ -18,7 +18,7 @@ type YamlServiceConfiguration struct {
 
 func main() {
 	fileConfig := goconfig.NewFileConfiguration("app.yaml", goconfig.YAML, &YamlServiceConfiguration{}, goenvloader.NewBraceEnvironmentLoader())
-	fileParser := goconfig.NewDefaulltConfigFileParser(fileConfig)
+	fileParser := goconfig.NewDefaultConfigFileParser(fileConfig)
 
 	config, err := fileParser.ParseConfig()
 

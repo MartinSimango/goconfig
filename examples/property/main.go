@@ -16,7 +16,7 @@ type PropertyServiceConfiguration struct {
 
 func main() {
 	fileConfig := goconfig.NewFileConfiguration("app.properties", goconfig.PROPERTY, &PropertyServiceConfiguration{}, goenvloader.NewBraceEnvironmentLoader())
-	fileParser := goconfig.NewDefaulltConfigFileParser(fileConfig)
+	fileParser := goconfig.NewDefaultConfigFileParser(fileConfig)
 
 	config, err := fileParser.ParseConfig()
 
