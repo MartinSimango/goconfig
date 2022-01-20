@@ -8,7 +8,6 @@ import (
 	"strings"
 
 	"github.com/BurntSushi/toml"
-	goenvloader "github.com/MartinSimango/go-envloader"
 	"gopkg.in/yaml.v2"
 )
 
@@ -26,33 +25,6 @@ func NewStrictConfigFileParser(strictConfig interface{},
 		StrictConfig:      strictConfig,
 		FileConfiguration: fileConfiguration,
 	}
-}
-
-func DefaultStrictYamlConfigFileParser(configFile string, config interface{}, strictConfig interface{}) *StrictConfigFileParser {
-	fileConfig := &FileConfiguration{
-		FileName:               configFile,
-		FileFormat:             YAML,
-		FileInputConfiguration: config,
-		EnvironmentLoader:      goenvloader.NewBraceEnvironmentLoader(),
-	}
-	return NewStrictConfigFileParser(
-		strictConfig,
-		fileConfig,
-	)
-}
-
-func DefaultStrictPropertyConfigFileParser(configFile string, config interface{}, strictConfig interface{}) *StrictConfigFileParser {
-	fileConfig := &FileConfiguration{
-		FileName:               configFile,
-		FileFormat:             PROPERTY,
-		FileInputConfiguration: config,
-		EnvironmentLoader:      goenvloader.NewBraceEnvironmentLoader(),
-	}
-
-	return NewStrictConfigFileParser(
-		strictConfig,
-		fileConfig,
-	)
 }
 
 func (cf *StrictConfigFileParser) ParseConfig() (interface{}, error) {

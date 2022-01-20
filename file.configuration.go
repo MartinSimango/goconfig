@@ -40,3 +40,30 @@ func NewFileConfiguration(fileName string,
 		EnvironmentLoader:      environmentLoader,
 	}
 }
+
+func YamlFileConfiguration(configFile string, config interface{}) *FileConfiguration {
+	return &FileConfiguration{
+		FileName:               configFile,
+		FileFormat:             YAML,
+		FileInputConfiguration: config,
+		EnvironmentLoader:      goenvloader.NewBraceEnvironmentLoader(),
+	}
+}
+
+func PropertyFileConfiguration(configFile string, config interface{}) *FileConfiguration {
+	return &FileConfiguration{
+		FileName:               configFile,
+		FileFormat:             PROPERTY,
+		FileInputConfiguration: config,
+		EnvironmentLoader:      goenvloader.NewBraceEnvironmentLoader(),
+	}
+}
+
+func JsonFileConfiguration(configFile string, config interface{}) *FileConfiguration {
+	return &FileConfiguration{
+		FileName:               configFile,
+		FileFormat:             JSON,
+		FileInputConfiguration: config,
+		EnvironmentLoader:      goenvloader.NewBraceEnvironmentLoader(),
+	}
+}
