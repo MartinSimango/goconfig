@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 
-	goenvloader "github.com/MartinSimango/go-envloader"
 	"github.com/MartinSimango/goconfig"
 )
 
@@ -22,7 +21,7 @@ type StrictPropertyServiceConfiguration struct {
 }
 
 func main() {
-	fileConfig := goconfig.NewFileConfiguration("app.properties", goconfig.PROPERTY, &PropertyServiceConfiguration{}, goenvloader.NewBraceEnvironmentLoader())
+	fileConfig := goconfig.PropertyFileConfiguration("app.properties", &PropertyServiceConfiguration{})
 	fileParser := goconfig.NewStrictConfigFileParser(&StrictPropertyServiceConfiguration{}, fileConfig)
 
 	config, err := fileParser.ParseConfig()

@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 
-	goenvloader "github.com/MartinSimango/go-envloader"
 	"github.com/MartinSimango/goconfig"
 )
 
@@ -26,7 +25,7 @@ type StrictYamlServiceConfiguration struct {
 }
 
 func main() {
-	fileConfig := goconfig.NewFileConfiguration("app.yaml", goconfig.YAML, &YamlServiceConfiguration{}, goenvloader.NewBraceEnvironmentLoader())
+	fileConfig := goconfig.YamlFileConfiguration("app.yaml", &YamlServiceConfiguration{})
 	fileParser := goconfig.NewStrictConfigFileParser(&StrictYamlServiceConfiguration{}, fileConfig)
 
 	config, err := fileParser.ParseConfig()
