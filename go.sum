@@ -2,6 +2,10 @@ github.com/BurntSushi/toml v1.0.0 h1:dtDWrepsVPfW9H/4y7dDgFc2MBUSeJhlaDtK13CxFlU
 github.com/BurntSushi/toml v1.0.0/go.mod h1:CxXYINrC8qIiEnFrOxCa7Jy5BFHlXnUU2pbicEuybxQ=
 github.com/MartinSimango/go-envloader v0.0.0-20220120091122-f9355a5bbdfb h1:XM553R68/lad2g2vVT0hsbUWb7y4dAjsbGcNKawOnUI=
 github.com/MartinSimango/go-envloader v0.0.0-20220120091122-f9355a5bbdfb/go.mod h1:G+Pv/WGx/Wu1y5hvLp9+5YQVfbYsOSkOSOw/KNZXflA=
+github.com/MartinSimango/go-envloader v0.0.0-20220121101951-9eb03b8b4d48 h1:HcK4cKD1Ty9CGOcviNsEdjYh2eIgHx4wfywFjLE7tfc=
+github.com/MartinSimango/go-envloader v0.0.0-20220121101951-9eb03b8b4d48/go.mod h1:G+Pv/WGx/Wu1y5hvLp9+5YQVfbYsOSkOSOw/KNZXflA=
+github.com/Ompluscator/dynamic-struct v1.3.0 h1:Ozvw+T2UOmV/2J2/L7tPZxrypKen3CGSBwmWj8pwC4Q=
+github.com/Ompluscator/dynamic-struct v1.3.0/go.mod h1:01g22H1GC9IFcrpQ4JQBkzynp8RoT0wmUMx/OvXNnw8=
 gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405/go.mod h1:Co6ibVJAznAaIkqp8huTwlJQCZ016jof/cbN4VW5Yz0=
 gopkg.in/yaml.v2 v2.4.0 h1:D8xgwECY7CYvx+Y2n4sBz93Jn9JRvxdiyyo8CTfuKaY=
 gopkg.in/yaml.v2 v2.4.0/go.mod h1:RDklbk79AGWmwhnvt/jBztapEOGDOx6ZbXqjP6csGnQ=
