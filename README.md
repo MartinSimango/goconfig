@@ -14,11 +14,12 @@ Below is an example config yaml file that goconfig can parse:
 ``` yaml
 # app.yaml
 
-port: ${USER_SERVICE_PORT,10000}
-service-name: user-service
-janus-graph: 
-  host: ${JANUS_GRAPH_HOST, ws://127.0.0.1}
-  db-port: ${JANUS_GRAPH_PORT,8182}
+port: ${SERVICE_PORT,8000}
+service-name: service
+db: 
+  host: ${DB_HOST, 127.0.0.1}
+  port: ${DB_PORT,8890}
+
 ```
 The format of a config value is: 
 ``` yaml
