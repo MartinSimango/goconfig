@@ -23,10 +23,10 @@ db:
 ```
 The format of a config value is: 
 ``` yaml
-configValue: ${ENVIRONMENT_VARIABLE, default_value}  
-# or 
+configValue: ${ENVIRONMENT_VARIABLE,default_value}  
+# OR 
 configValue: ${ENVIRONMENT_VARIABLE} 
-# or 
+# OR 
 configValue: value
 ```
 
