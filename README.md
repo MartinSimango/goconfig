@@ -10,7 +10,7 @@ go get github.com/MartinSimango/goconfig
 
 ## Example
 Below is an example config yaml file that goconfig can parse:
-### Config File (app.yaml)
+#### Config File (app.yaml)
 ``` yaml
 # app.yaml
 
@@ -30,7 +30,7 @@ configValue: value
 ```
 
 Below is an example of the code that parse the config file and stores the config within a struct.
-### Example Program (main.go)
+#### Example Program (main.go)
 ``` go
 package main
 
