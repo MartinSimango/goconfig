@@ -1,5 +1,5 @@
 # goconfig
-Configuration file parser for property and yaml files. Allows for fields in config files to be environment variables with default values.
+Simple configuration file parser for property and yaml files. Allows for fields in config files to be environment variables with default values.
 
 
 ## Install
