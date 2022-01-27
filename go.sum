@@ -4,6 +4,10 @@ github.com/MartinSimango/go-envloader v0.0.0-20220120091122-f9355a5bbdfb h1:XM55
 github.com/MartinSimango/go-envloader v0.0.0-20220120091122-f9355a5bbdfb/go.mod h1:G+Pv/WGx/Wu1y5hvLp9+5YQVfbYsOSkOSOw/KNZXflA=
 github.com/MartinSimango/go-envloader v0.0.0-20220121101951-9eb03b8b4d48 h1:HcK4cKD1Ty9CGOcviNsEdjYh2eIgHx4wfywFjLE7tfc=
 github.com/MartinSimango/go-envloader v0.0.0-20220121101951-9eb03b8b4d48/go.mod h1:G+Pv/WGx/Wu1y5hvLp9+5YQVfbYsOSkOSOw/KNZXflA=
+github.com/MartinSimango/go-envloader v0.0.0-20220127083447-b66ca8efb24f h1:5QdgCH/YPVC05vBy2sfDFZ7Y4pRRaZJsP6fzqqhDfqI=
+github.com/MartinSimango/go-envloader v0.0.0-20220127083447-b66ca8efb24f/go.mod h1:G+Pv/WGx/Wu1y5hvLp9+5YQVfbYsOSkOSOw/KNZXflA=
+github.com/MartinSimango/go-envloader v0.0.0-20220127092451-f818a03ecf49 h1:6fD8i6DbvhEQ1Xrm+NcRH4/GYwooMibaVOblVFu0kuc=
+github.com/MartinSimango/go-envloader v0.0.0-20220127092451-f818a03ecf49/go.mod h1:G+Pv/WGx/Wu1y5hvLp9+5YQVfbYsOSkOSOw/KNZXflA=
 github.com/Ompluscator/dynamic-struct v1.3.0 h1:Ozvw+T2UOmV/2J2/L7tPZxrypKen3CGSBwmWj8pwC4Q=
 github.com/Ompluscator/dynamic-struct v1.3.0/go.mod h1:01g22H1GC9IFcrpQ4JQBkzynp8RoT0wmUMx/OvXNnw8=
 gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405/go.mod h1:Co6ibVJAznAaIkqp8huTwlJQCZ016jof/cbN4VW5Yz0=

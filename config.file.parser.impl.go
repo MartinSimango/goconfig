@@ -162,9 +162,13 @@ func setSingularConfigValue(inputConfig, outputConfig reflect.Value, valueStruct
 		err = setValueForString(inputConfig.Field(valueStructIndex).String(), field, environmentLoader)
 	case reflect.Int, reflect.Int8, reflect.Int16, reflect.Int32, reflect.Int64:
 		err = setValueForInt(inputConfig.Field(valueStructIndex).String(), field, environmentLoader)
+	case reflect.Float32, reflect.Float64:
+		err = setValueForFloat(inputConfig.Field(valueStructIndex).String(), field, environmentLoader)
+	case reflect.Bool:
+		err = setValueForBool(inputConfig.Field(valueStructIndex).String(), field, environmentLoader)
 	default:
-		panic(fmt.Sprintf("Unsupported type found in application config struct.\nStruct Name: %s\nProperty Type: %s\n",
-			outputConfig.Type().Name(),
+		panic(fmt.Sprintf("Unsupported type found in config struct.\nField Name: %s\nField Type: %s\n",
+			outputConfig.Type().Field(valueStructIndex).Name,
 			outputConfig.Field(valueStructIndex).Type().String()))
 	}
 
@@ -201,6 +205,34 @@ func setValueForInt(input string, outputField reflect.Value,
 	}
 
 	outputField.SetInt(int64(value))
+
+	return nil
+}
+
+func setValueForFloat(input string, outputField reflect.Value,
+	environmentLoader goenvloader.EnvironmentLoader) error {
+
+	value, err := environmentLoader.LoadFloatFromEnv(input)
+
+	if err != nil {
+		return err
+	}
+
+	outputField.SetFloat(value)
+
+	return nil
+}
+
+func setValueForBool(input string, outputField reflect.Value,
+	environmentLoader goenvloader.EnvironmentLoader) error {
+
+	value, err := environmentLoader.LoadBoolFromEnv(input)
+
+	if err != nil {
+		return err
+	}
+
+	outputField.SetBool(value)
 
 	return nil
 }
