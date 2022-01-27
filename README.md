@@ -70,10 +70,11 @@ func main() {
 
 ## Notes
 
-Currently the only supported types in config structs are:
-- `int`
+Currently the only supported primitive types in config structs are:
 - `string`
-- `struct`
+- `bool`
+- `int`,`int8`,`int16` ,`int32`, `int64` 
+- `float32`,`float64`
 
 I plan on adding other types very shortly.
 

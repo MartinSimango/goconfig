@@ -11,7 +11,7 @@ type YamlServiceConfiguration struct {
 	ServiceName string `yaml:"service-name"`
 	DB          struct {
 		Host string `yaml:"host"`
-		Port int    `yaml:"port"`
+		Port int16  `yaml:"port"`
 	} `yaml:"db"`
 }
 
