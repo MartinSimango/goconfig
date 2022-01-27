@@ -31,7 +31,7 @@ configValue: value
 ```
 
 Below is an example of the code that parse the config file and stores the config within a struct.
-#### Example Program (main.go)
+#### Example Program - Loading program config from yaml file (main.go)
 ``` go
 package main
 
@@ -67,4 +67,22 @@ func main() {
 }
 
 ```
+
+## Notes
+
+Currently the only supported types in config structs are:
+- `int`
+- `string`
+- `struct`
+
+I plan on adding other types very shortly.
+
+## Contributing
+
+- Fork the repo on GitHub
+- Clone the project to your own machine
+- Create a *branch* with your modifications `git checkout -b feature/new-feature`.
+- Then _commit_ your changes `git commit -m 'Added new feature`
+- Make a _push_ to your _branch_ `git push origin feature/new-feature`.
+- Submit a **Pull Request** so that I can review your changes
 
