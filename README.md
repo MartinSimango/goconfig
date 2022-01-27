@@ -73,8 +73,13 @@ func main() {
 Currently the only supported primitive types in config structs are:
 - `string`
 - `bool`
-- `int`,`int8`,`int16` ,`int32`, `int64` 
-- `float32`,`float64`
+- `int`
+- `int8`
+- `int16` 
+- `int32`
+- `int64` 
+- `float32`
+- `float64`
 
 I plan on adding other types very shortly.
 
